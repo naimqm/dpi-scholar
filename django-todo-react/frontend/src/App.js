@@ -74,16 +74,16 @@ class App extends Component {
     return (
       <div className="nav nav-tabs">
         <span
-          onClick={() => this.displayCompleted(true)}
-          className={this.state.viewCompleted ? "nav-link active" : "nav-link"}
-        >
-          Complete
-        </span>
-        <span
           onClick={() => this.displayCompleted(false)}
           className={this.state.viewCompleted ? "nav-link" : "nav-link active"}
         >
-          Incomplete
+          ⏰ To-Do
+        </span>
+        <span
+          onClick={() => this.displayCompleted(true)}
+          className={this.state.viewCompleted ? "nav-link active" : "nav-link"}
+        >
+          🤗 Completed Tasks
         </span>
       </div>
     );
@@ -113,13 +113,13 @@ class App extends Component {
             className="btn btn-secondary mr-2"
             onClick={() => this.editItem(item)}
           >
-            Edit
+            📝 Edit
           </button>
           <button
             className="btn btn-danger"
             onClick={() => this.handleDelete(item)}
           >
-            Delete
+            ❌ Delete
           </button>
         </span>
       </li>
@@ -129,7 +129,7 @@ class App extends Component {
   render() {
     return (
       <main className="container">
-        <h1 className="text-white text-uppercase text-center my-4">Todo app</h1>
+        <h1 className="text-white text-center my-4">✅ My Task Manager</h1>
         <div className="row">
           <div className="col-md-6 col-sm-10 mx-auto p-0">
             <div className="card p-3">
@@ -138,7 +138,7 @@ class App extends Component {
                   className="btn btn-primary"
                   onClick={this.createItem}
                 >
-                  Add task
+                  ➕ Add Task
                 </button>
               </div>
               {this.renderTabList()}
